@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body
+        {
+            background-color: black;
+            color: white;
+        }
+
+        div#n1
+        {
+            background-color: yellow;
+            width: 250px;
+            height: 50px;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            border-radius: 10px;
+        }
+
+        div#n2
+        {
+            background-color: yellow;
+            width: 250px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            border-radius: 10px;
+        }
+
+        div#n3
+        {
+            background-color: yellow;
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            border-radius: 10px;
+            background-color: rgb(184, 164, 164);
+        }
+
+        div#n4
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color: black;
+            margin: 2px;
+            background-color: yellow;
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            border-radius: 10px;
+            background-color: aquamarine;
+        }
+
+        input
+        {
+            font-size: 30px;
+            color: black;
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: aquamarine;
+        }
+
+        img
+        {
+            width: 55px;
+            padding: 10px;
+            border-radius: 50%;   
+        }
+
+        img:hover
+        {
+            border: 1px solid rgba(255, 255, 255, 0.637);
+            transform: translate(-1px, -1px);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.623);
+            transition: transform 0.2s, border 0.5s;
+        }   
+
+        
+    </style>
+</head>
+    <body>
+        <h1>Insira os números que deseja calcular, em seguida qual operação realizar</h1>
+        <div id="n1">
+            <input tabindex="1" type="number" id="numero_1">
+        </div>
+        <div id="n2">
+            <input tabindex="2" type="number" id="numero_2">
+        </div>
+        <div id="n3">
+            <img tabindex="3" onclick="soma()" src="imagens/soma.png" alt="">
+            <img tabindex="4" onclick="subtracao()" src="imagens/subtracao.png" alt="">
+            <img tabindex="5" onclick="multip()" src="imagens/multiplicacao.png" alt="">
+            <img tabindex="6" onclick="divis()" src="imagens/divisao.png" alt="">
+            <img tabindex="7" onclick="raiz()" src="imagens/radiciacao.png" alt="">
+        </div>
+        <div id="n4"></div>
+
+        <script>
+            
+            function soma()
+            {
+                var primeiro_n = window.document.getElementById('numero_1')
+                var segundo_n = window.document.getElementById('numero_2')
+                var n_prim = Number(primeiro_n.value)
+                var n_segun = Number(segundo_n.value)
+                var res = window.document.getElementById('n4')
+
+                var calculo = n_prim + n_segun
+                res.innerHTML = `Resultado da soma é <strong>${calculo}</strong>`
+            }
+
+            function subtracao()
+            {
+                var primeiro_n = window.document.getElementById('numero_1')
+                var segundo_n = window.document.getElementById('numero_2')
+                var n_prim = Number(primeiro_n.value)
+                var n_segun = Number(segundo_n.value)
+                var res = window.document.getElementById('n4')
+
+                var calculo = n_prim - n_segun
+                res.innerHTML = `Resultado da subtração é <strong>${calculo}</strong>`
+            }
+
+            function multip()
+            {
+                var primeiro_n = window.document.getElementById('numero_1')
+                var segundo_n = window.document.getElementById('numero_2')
+                var n_prim = Number(primeiro_n.value)
+                var n_segun = Number(segundo_n.value)
+                var res = window.document.getElementById('n4')
+
+                var calculo = n_prim * n_segun
+                res.innerHTML = `O resultado do produto é <strong>${calculo}</strong>`
+            }
+
+            function divis()
+            {
+                var primeiro_n = window.document.getElementById('numero_1')
+                var segundo_n = window.document.getElementById('numero_2')
+                var n_prim = Number(primeiro_n.value)
+                var n_segun = Number(segundo_n.value)
+                var res = window.document.getElementById('n4')
+
+                var calculo = n_prim / n_segun
+                res.innerHTML = `Resultado da divisão é <strong>${calculo}</strong>`
+            }
+
+            function raiz()
+            {
+                var primeiro_n = window.document.getElementById('numero_1')
+                var segundo_n = window.document.getElementById('numero_2')
+                var n_prim = Number(primeiro_n.value)
+                var n_segun = Number(segundo_n.value)
+                var res = window.document.getElementById('n4')
+
+                var calculo_1 = n_prim ** (1/2)
+                var calculo_2 = n_segun ** (1/2)
+
+                res.innerHTML = `<p>Raiz do primeiro é <strong>${calculo_1}</strong><br>Raiz do segundo é <strong>${calculo_2}</strong></p>`
+            }
+        </script>
+
+    </body>
+</html>
