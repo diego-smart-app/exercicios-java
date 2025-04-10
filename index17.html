@@ -55,6 +55,12 @@
                 border-radius: 10px;
             }
 
+            select
+            {
+                width: 100px;
+                height: 175px;
+            }
+
             button
             {
                 background-color: #4CAF50;
@@ -91,7 +97,7 @@
         </div>
         <button onclick="geraTabuada()">Gerar tabuada</button>
         <div id="saida">
-            <select name="tabuada" id="seltab" size="10"></select>
+            <select name="tabuada" id="seltab" size="10"  style="display: none"></select>
             <p id="frase_exibida"></p>
         </div>
     </section>
@@ -106,6 +112,7 @@
             var num = Number(document.getElementById('i_num_tabuada').value);
 
             var tab = window.document.getElementById('seltab');
+            tab.style.display = 'none';
 
             tab.innerHTML = ''
 
@@ -123,6 +130,7 @@
                     item.text = `${frase}`;
                     tab.appendChild(item);
                 }
+                tab.style.display = 'block'
 
             } else
             {
